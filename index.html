@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
   
-  <!-- Canvas Confetti Library -->
+
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
   <style>
@@ -52,7 +52,7 @@
       position: relative;
     }
     
-    /* Animated Gradient Background */
+
     .gradient-bg {
       position: fixed;
       top: 0;
@@ -71,7 +71,7 @@
       100% { background-position: 0% 50%; }
     }
     
-    /* Floating Hearts */
+
     .hearts {
       position: fixed;
       top: 0;
@@ -106,7 +106,7 @@
       }
     }
     
-    /* Intro Section */
+   
     #intro {
       position: fixed;
       inset: 0;
@@ -303,7 +303,7 @@
       text-shadow: 0 2px 10px rgba(122, 214, 255, 0.3);
     }
     
-    /* Cake Container */
+
     .cake-container {
       position: relative;
       width: 320px;
@@ -327,7 +327,7 @@
       50% { transform: translateY(-15px) rotateX(5deg); }
     }
     
-    /* Improved Cake Design */
+
     .cake-base {
       position: absolute;
       bottom: 0;
@@ -409,7 +409,7 @@
       border-radius: 2px;
     }
     
-    /* Candles */
+
     .candle-wrap {
       position: absolute;
       top: -30px;
@@ -920,11 +920,11 @@
   </style>
 </head>
 <body>
-  <!-- Background Elements -->
+
   <div class="gradient-bg"></div>
   <div class="hearts" id="hearts"></div>
 
-  <!-- Intro -->
+
   <section id="intro">
     <div class="intro-box">
       <h1>تولدت مبارک🌸</h1>
@@ -935,7 +935,6 @@
     </div>
   </section>
 
-  <!-- Main Birthday Page -->
   <section id="main">
     <h1 class="title">تولدت مبارک💫</h1>
     <h3>بهترین‌ها رو برات آرزو می‌کنم</h3>
@@ -949,14 +948,14 @@
         <div class="cake-top"></div>
         
         <div class="cake-decoration">
-          <!-- Cherries -->
+         
           <div class="cherry"></div>
           <div class="cherry"></div>
           <div class="cherry"></div>
           <div class="cherry"></div>
           <div class="cherry"></div>
           
-          <!-- Cherry stems -->
+         
           <div class="cherry-stem"></div>
           <div class="cherry-stem"></div>
           <div class="cherry-stem"></div>
@@ -965,7 +964,7 @@
         </div>
         
         <div class="candle-wrap" id="candles">
-          <!-- Candles will be added by JS -->
+        
         </div>
       </div>
     </div>
@@ -982,7 +981,7 @@
       </button>
     </div>
 
-    <!-- Game Section -->
+
     <div id="game">
       <h3><i class="fas fa-gamepad"></i> بازی تولد بادکنکی</h3>
       <p class="game-instructions">
@@ -1014,7 +1013,6 @@
     </div>
   </section>
 
-  <!-- Special Surprise Modal -->
   <div class="surprise-modal" id="surpriseModal">
     <div class="surprise-content">
       <h2>تبریک! 🎊</h2>
@@ -1028,12 +1026,12 @@
 
 
 
-  <!-- Birthday Music -->
+
   <audio id="music" loop>
     <source src="https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3" type="audio/mpeg">
   </audio>
   
-  <!-- Additional birthday music tracks -->
+
   <audio id="music2">
     <source src="https://assets.mixkit.co/music/preview/mixkit-party-happy-people-479.mp3" type="audio/mpeg">
   </audio>
@@ -1043,7 +1041,7 @@
   </audio>
 
 <script>
-  // DOM Elements
+
   const startBtn = document.getElementById('start');
   const intro = document.getElementById('intro');
   const main = document.getElementById('main');
@@ -1063,7 +1061,6 @@
   const surpriseModal = document.getElementById('surpriseModal');
   const closeSurpriseBtn = document.getElementById('closeSurprise');
   
-  // Game elements
   const balloonsContainer = document.getElementById('balloons');
   const scoreElement = document.getElementById('score');
   const timeElement = document.getElementById('time');
@@ -1080,8 +1077,7 @@
   let currentTrack = 1;
   const tracks = [music, music2, music3];
   let isPlaying = false;
-  
-  // Create floating hearts background
+
   function createHearts() {
     const heartsContainer = document.getElementById('hearts');
     const heartCount = 40;
@@ -1109,7 +1105,6 @@
     }
   }
   
-  /* ----- START BUTTON ----- */
   startBtn.onclick = () => {
     // Fade out intro
     intro.classList.add('fade-out');
@@ -1128,8 +1123,7 @@
       showMessage("تولدت مبارک! 💖", "امیدوارم سالی پر از موفقیت و شادی داشته باشی!");
     }, 1000);
   };
-  
-  /* ----- CREATE CANDLES (5 candles for a better look) ----- */
+
   const candleContainer = document.getElementById('candles');
   const candleCount = 5;
   
@@ -1152,7 +1146,7 @@
     });
   }
   
-  /* ----- BLOW CANDLES ----- */
+
   blowBtn.onclick = () => {
     document.querySelectorAll('.flame').forEach(f => { 
       f.style.opacity = '0';
@@ -1160,7 +1154,7 @@
       f.style.transition = '0.6s';
     });
     
-    // Play blow sound
+
     playBlowSound();
     
     setTimeout(() => { 
@@ -1181,7 +1175,7 @@
     showMessage("شمع‌ها دوباره روشن شدند! 🔥", "می‌تونی دوباره فوت کنی یا بازی رو شروع کنی!");
   };
   
-  // Blow individual candle
+
   function blowCandle(id) {
     const flame = document.querySelector(`.flame[data-id="${id}"]`);
     if (flame.style.opacity !== '0') {
@@ -1206,7 +1200,7 @@
     }
   }
   
-  /* ----- CREATE BALLOONS FOR GAME ----- */
+
   function createBalloons() {
     balloonsContainer.innerHTML = '';
     
@@ -1215,7 +1209,7 @@
       balloon.className = 'balloon';
       balloon.dataset.id = i;
       
-      // Random color
+
       const colors = ['var(--pink)', 'var(--blue)', 'var(--purple)', 'var(--yellow)'];
       const color = colors[Math.floor(Math.random() * colors.length)];
       balloon.style.background = `radial-gradient(circle at 30% 30%, ${color}, ${color}dd)`;
@@ -1237,7 +1231,7 @@
     const balloon = document.querySelector(`.balloon[data-id="${id}"]`);
     if (!balloon || balloon.classList.contains('popped')) return;
     
-    // Add popped class
+
     balloon.classList.add('popped');
     
     // Change appearance to look popped
@@ -1246,8 +1240,7 @@
     balloon.style.transform = 'scale(0.8)';
     balloon.style.cursor = 'default';
     balloon.style.opacity = '0.5';
-    
-    // Play pop sound
+
     playPopSound();
     
     // Update score and balloons left
@@ -1257,7 +1250,7 @@
     scoreElement.textContent = score;
     balloonsLeftElement.textContent = balloonsLeft;
     
-    // Small confetti for popped balloon
+
     confetti({
       particleCount: 25,
       spread: 60,
@@ -1280,7 +1273,6 @@
     }
   }
   
-  /* ----- SHOW SURPRISE MODAL ----- */
   function showSurprise() {
     surpriseModal.style.display = 'flex';
     
